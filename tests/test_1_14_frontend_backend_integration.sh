@@ -161,7 +161,8 @@ for line in "${BUILD_LINES[@]}"; do
   img="$(echo "$line" | grep -oE '(-t|--tag)[[:space:]=]+[^[:space:]]+' | head -1 | sed -E 's/^(-t|--tag)[[:space:]=]+//')"
   [ -n "$img" ] || continue
 
-  raw_ctx="$(echo "$line" | awk '{print $NF}')"
+  raw_ctx="$(docker_build_context "$line")"
+  [ -n "$raw_ctx" ] || continue
   resolved_ctx="$(resolve_context "$raw_ctx" || true)"
   [ -n "$resolved_ctx" ] || continue
 
