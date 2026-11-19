@@ -1,0 +1,14 @@
+https://docker-quick-reference.onrender.com
+
+I deployed the Docker Quick Reference web application from exercise 1.15
+to Render as a Web Service using the public Docker Hub image
+jhlow0106/docker-quick-reference:latest. I selected the Free instance plan
+and the Singapore region. The container runs a Python HTTP server as an
+unprivileged user and listens on 0.0.0.0:8080. Render detected port 8080
+and provides the public HTTPS endpoint. I configured /health as the
+health check path and verified that it returns {"status": "ok"}. I also
+opened the public home page and confirmed that the Docker command
+reference is displayed. The deployment configuration is in render.yaml.
+
+The free service spins down after 15 minutes without incoming traffic,
+so the first request after an idle period can take about a minute.

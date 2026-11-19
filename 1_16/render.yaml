@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: docker-quick-reference
+    runtime: image
+    image:
+      url: docker.io/jhlow0106/docker-quick-reference:latest
+    plan: free
+    region: singapore
+    healthCheckPath: /health
