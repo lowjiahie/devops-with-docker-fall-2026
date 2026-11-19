@@ -1,0 +1,2 @@
+docker build -t curler-v2 .
+docker run --rm curler-v2 helsinki.fi
